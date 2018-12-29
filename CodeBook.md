@@ -16,7 +16,7 @@ There are two main data files.  One containing those in the train group which ha
 * y_train.txt: A file containing the activity code for each record in the train data set
 * y_test.txt: A file containing the activity code for each record in the test data set
 * X_train.txt: The actual data from the train group
-* X__test.txt: The actual data from the test group
+* X_test.txt: The actual data from the test group
  
 ## Making the first data set: maindataset.csv
 The variables, activities, and subject_id files for their respective train and 
@@ -36,7 +36,7 @@ were dropped.
 * The dataset was reduced to only the mean and standard deviation columns
 * Variable names were made more descriptive by pointing out axial direction
 * Time and frequency domain variables were made explicity clear
-* Periods were replaced with _.  Uppercase letters followed by lower were separated by a _.
+* Periods were replaced with '_'.  Uppercase letters followed by lower were separated by a '_'.
 * Variables were made all lower case.
 
 ## Making the second data set: avg_by_subj_activity.csv

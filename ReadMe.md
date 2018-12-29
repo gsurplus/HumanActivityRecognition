@@ -4,7 +4,7 @@ This is the Human Activity Recognition Using Smartphones Data reduced to just th
 ## ReadMe.md
 This file.  It describes the other files in this repository
 ## CodeBook.md
-Describes how original data and how it is transformed.  Also describes each of the variables in the resulting data sets.
+Describes the original data and how it is transformed.  Also describes each of the variables in the resulting data sets.
 ## run_analysis.R
 The script that was used to transform the original data into the two datasets: maindataset.csv and avg_by_subj_activity.csv
 ## maindataset.csv
