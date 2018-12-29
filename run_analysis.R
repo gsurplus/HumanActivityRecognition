@@ -28,7 +28,7 @@ dataset_test <- read.table("data/UCI HAR Dataset/test/X_test.txt", sep="", col.n
      cbind(subject_test) %>%  #attaching the subject number
      cbind(activity_test) #attaching the activity
 combined_dataset <- rbind(dataset_train, dataset_test)  ##the train and test datasets combined together
-narrowed_dataset <- select (combined_dataset, dataset, subject_id, activity_name, grep("mean[^F]|std",features$V2))  ##Look at only mean and std variables
+narrowed_dataset <- select (combined_dataset, subject_id, activity_name, grep("mean[^F]|std",features$V2))  ##Look at only mean and std variables
 names(narrowed_dataset) <- gsub("\\.\\.\\.","_axial_dir_",names(narrowed_dataset)) ##add "axial_dir label for X, Y, and Z
 names(narrowed_dataset) <- gsub("^t","time_",names(narrowed_dataset))  ##translate 't' label to time
 names(narrowed_dataset) <- gsub("^f","freq_domain_",names(narrowed_dataset))  ##translate 'f' label to freq_domain 
