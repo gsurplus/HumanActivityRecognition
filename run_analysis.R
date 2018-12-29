@@ -41,12 +41,14 @@ names(narrowed_dataset) <- tolower(names(narrowed_dataset)) ##make all letters i
 maindataset <- narrowed_dataset  # *************final main dataset***************
 
 ##******************final dataset 2  average by subject_id and activity
-by_subject_and_activity <- aggregate(narrowed_dataset[,4:69], list(narrowed_dataset$subject_id, narrowed_dataset$activity_name), FUN=mean) %>% 
+by_subject_and_activity <- aggregate(narrowed_dataset[,3:68], list(narrowed_dataset$subject_id, narrowed_dataset$activity_name), FUN=mean) %>% 
      rename(subject_id = Group.1) %>% rename (activity_name = Group.2)
 
 ##******************write out the datasets to a file*****************
-write.csv(maindataset,"UCI_HAR/maindataset.csv")
-write.csv(by_subject_and_activity,"UCI_HAR/avg_by_subj_activity.csv")
+write.table(maindataset,"UCI_HAR/maindataset.txt", row.name=FALSE)
+write.table(by_subject_and_activity,"UCI_HAR/avg_by_subj_activity.txt", row.name=FALSE)
+
+
 
 
 
