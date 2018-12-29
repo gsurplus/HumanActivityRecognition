@@ -1,14 +1,14 @@
-#Codebook for run_analysis.R
+# Codebook for run_analysis.R
 
-##Purpose of Script
+## Purpose of Script
 To read in the data files from the Human Activity Recognition Using Smartphones Data Set and to provide a primary tidy data set.  A secondary dataset will be
 created that gives the averages of each of the variables by subject_id, and 
 activity.
 
-##The main raw data files
+## The main raw data files
 There are two main data files.  One containing those in the train group which has 7,352 rows and one in the test group which contains 2,947 rows.  Both contain 561 variables.  The variables, subject ids and activities are in separate files that must be read in and merged.
 
-##Datafiles read in
+## Datafiles read in
 * features.txt: Contains the 561 variable names in their X_train and X_test data sets
 * subject_train.txt: The subject id of each record in the train data set
 * subject_test.txt: The subject id of each record in the test data set
@@ -18,12 +18,12 @@ There are two main data files.  One containing those in the train group which ha
 * X_train.txt: The actual data from the train group
 * X__test.txt: The actual data from the test group
  
-##Making the first data set: maindataset.csv
+## Making the first data set: maindataset.csv
 The variables, activities, and subject_id files for their respective train and 
 test groups were merged together.  Then the train and test datasets were 
 appended together.  Variables not relating to the mean or standard deviations 
 were dropped.  
-###Specific data processing procedures
+### Specific data processing procedures
 * The variables were read into a table
 * The train subject ids were read into subject_train
 * The test subject ids were read into subject_test
@@ -39,12 +39,12 @@ were dropped.
 * Periods were replaced with _.  Uppercase letters followed by lower were separated by a _.
 * Variables were made all lower case.
 
-##Making the second data set: avg_by_subj_activity.csv
+## Making the second data set: avg_by_subj_activity.csv
 The averages were computed by subject and activity using the command:
 * by_subject_and_activity <- aggregate(narrowed_dataset[,4:69], list(narrowed_dataset$subject_id, narrowed_dataset$activity_name), FUN=mean) %>% 
      rename(subject_id = Group.1) %>% rename (activity = Group.2)
 
-##Variable names of the main data set:
+## Variable names of the main data set:
 1. subject_id: The unique code used to identify the subject
 2. activity_name: The text description of the activity being performed such as:
 	* Walking
@@ -119,5 +119,5 @@ The averages were computed by subject and activity using the command:
 66. freq_domain_body_gyro_mag_std: Fast Fourier Transform applied to angular velocity to produce the frequency domain signal.  This is the standard deviation value of the magnitude of the angular velocity 3-D signals using the Euclidean norm.
 67. freq_domain_body_gyro_jerk_mag_mean: Fast Fourier Transform applied to angular velocity jerk signals to produce the frequency domain signal.  This is the mean value of the magnitude of the angular velocity jerk 3-D signals using the Euclidean norm.
 68. freq_domain_body_gyro_jerk_mag_std: Fast Fourier Transform applied to angular velocity jerk signals to produce the frequency domain signal.  This is the standard deviation value of the magnitude of the angular velocity jerk 3-D signals using the Euclidean norm.
-##Variable names in the second data set:
+## Variable names in the second data set:
 Variable names are identical to the first dataset
